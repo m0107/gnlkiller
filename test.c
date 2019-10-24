@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolomer <ncolomer@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aseo <aseo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 17:39:00 by ncolomer          #+#    #+#             */
-/*   Updated: 2019/10/24 01:09:48 by sgah             ###   ########.fr       */
+/*   Updated: 2019/10/24 18:48:10 by aseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,10 @@ int
 		"tests/64_line_nl",
 		"tests/65_line",
 		"tests/65_line_nl",
-		"test/baudelaire.txt",
-		"test/large_file.txt",
+		"tests/baudelaire.txt",
+		"tests/large_file.txt",
 		"tests/lorem_ipsum",
+		//"tests/one_big_fat_line.txt",
 		//"tests/Mr. Justice Maxell by Edgar Wallace.txt",
 		NULL
 	};
@@ -78,7 +79,6 @@ int
 	test_count = 0;
 	while (tests[test_count])
 		test_count++;
-	printf("**********************\n* BUFFER_SIZE %6d *\n**********************\n", BUFFER_SIZE);
 	i = 0;
 	while (i < test_count)
 	{
