@@ -5,10 +5,10 @@ function test {
 	DIFF=$(diff expected output)
 	if [ "$DIFF" != "" ]
 	then
-		echo -e "\033[0mBUFFER_SIZE =\033[0;31m $1 KO"
+		echo "\033[0mBUFFER_SIZE =\033[0;31m $1 KO"
 		#exit
 	else
-		echo -e "\033[0mBUFFER_SIZE =\033[0;32m $1 OK"
+		echo "\033[0mBUFFER_SIZE =\033[0;32m $1 OK"
 	fi
 }
 
