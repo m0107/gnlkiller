@@ -1,5 +1,5 @@
 ﻿```
-git clone https://github.com/DontBreakAlex/gnlkiller.git; cd gnlkiller; cp ../get_next_line.c .; cp ../get_next_line_utils.c .; cp ../get_next_line.h .; ./run.sh;
+git clone https://github.com/DontBreakAlex/gnlkiller.git ; cd gnlkiller; cp ../get_next_line.c .; cp ../get_next_line_utils.c .; cp ../get_next_line.h .; ./run.sh;
 ```
 
 ![Demo](https://s3.gifyu.com/images/gnlkiller64f771561dd24cca.gif)
