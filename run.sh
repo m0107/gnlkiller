@@ -1,14 +1,15 @@
 function test {
+	rm -f output
 	gcc -Wall -Wextra -Werror -D BUFFER_SIZE=$1 -I. get_next_line.c get_next_line_utils.c test.c -o get_next_line
 	./get_next_line < tests/simple > output
 
 	DIFF=$(diff expected output)
 	if [ "$DIFF" != "" ]
 	then
-		echo "\033[0mBUFFER_SIZE =\033[0;31m $1 KO"
+		echo "BUFFER_SIZE =\033[0;31m $1 KO\033[0m"
 		#exit
 	else
-		echo "\033[0mBUFFER_SIZE =\033[0;32m $1 OK"
+		echo "BUFFER_SIZE =\033[0;32m $1 OK\033[0m"
 	fi
 }
 

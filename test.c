@@ -6,7 +6,7 @@
 /*   By: aseo <aseo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 17:39:00 by ncolomer          #+#    #+#             */
-/*   Updated: 2019/10/24 18:48:10 by aseo             ###   ########.fr       */
+/*   Updated: 2019/10/25 13:53:11 by aseo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,19 @@
 #include <fcntl.h>
 #include "get_next_line.h"
 
+void	sigcatch()
+{
+	write(2, "Your GNL got killed because it got stuck \n", 42);
+	exit(-1);
+}
+
 void
 	test_fd(char **buffer, char const *filename, int fd)
 {
 	int	r;
 
+	alarm(5);
+	signal(SIGALRM, sigcatch);
 	if (fd == STDIN_FILENO)
 		printf("Reading stdin...\n---\n");
 	else
@@ -47,6 +55,7 @@ void
 		free(*buffer);
 		*buffer = NULL;
 	}
+	alarm(0);
 }
 
 int
