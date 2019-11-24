@@ -23,7 +23,7 @@ void	sigcatch()
 }
 
 void
-	test_fd(char **buffer, char const *filename, int fd)
+	test_fd(char *buffer, char const *filename, int fd)
 {
 	int	r;
 
@@ -92,10 +92,10 @@ int
 	while (i < test_count)
 	{
 		fd = open(tests[i], O_RDONLY);
-		test_fd(&buffer, tests[i++], fd);
+		test_fd(buffer, tests[i++], fd);
 		close(fd);
 	}
-	test_fd(&buffer, "Invalid file descriptor", 42);
-	test_fd(&buffer, NULL, STDIN_FILENO);
+	test_fd(buffer, "Invalid file descriptor", 42);
+	test_fd(buffer, NULL, STDIN_FILENO);
 	return (0);
 }
