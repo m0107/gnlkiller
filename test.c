@@ -34,26 +34,26 @@ void
 	else
 		printf("Reading %s...\n---\n", filename);
 
-	while ((r = get_next_line(fd, buffer)) > 0)
+	while ((r = get_next_line(fd, &buffer)) > 0)
 	{
-		printf("%2d-%s\n", r, *buffer);
-		if (*buffer)
+		printf("%2d-%s\n", r, buffer);
+		if (buffer)
 		{
-			free(*buffer);
-			*buffer = NULL;
+			free(buffer);
+			buffer = NULL;
 		}
 
 	}
 
 	if (r >= 0)
-		printf("%2d-%s\n---\n", r, *buffer);
+		printf("%2d-%s\n---\n", r, buffer);
 	else
 		printf("%2d#error\n---\n", r);
 
-	if (*buffer)
+	if (buffer)
 	{
-		free(*buffer);
-		*buffer = NULL;
+		free(buffer);
+		buffer = NULL;
 	}
 	alarm(0);
 }
